@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BookFlix</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to bottom, #1e1e2f, #2a2a3d);
+      color: #fff;
+    }
+
+    .back-button {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      background: rgba(0, 0, 0, 0.7);
+      color: #fff;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      text-decoration: none;
+      font-size: 1rem;
+      z-index: 1000;
+      transition: background 0.3s ease;
+    }
+
+    .back-button:hover {
+      background: rgba(226, 36, 255, 0.478);
+    }
+
+    .project-details {
+      text-align: center;
+      padding: 2rem;
+      max-width: 800px;
+      margin: auto;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    .project-details h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      color: #f4a261;
+    }
+
+    .project-details p {
+      font-size: 1.2rem;
+      line-height: 1.8;
+      color: #fff;
+    }
+
+    .carousel {
+      position: relative;
+      max-width: 100%;
+      margin: 1.5rem 0;
+      overflow: hidden;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .carousel img {
+      width: 100%;
+      height: auto;
+      display: none;
+    }
+
+    .carousel img.active {
+      display: block;
+    }
+
+    .carousel-controls {
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      transform: translateY(-50%);
+    }
+
+    .carousel-controls button {
+      background: rgba(0, 0, 0, 0.7);
+      color: #fff;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .carousel-controls button:hover {
+      background: rgba(226, 36, 255, 0.478);
+    }
+  </style>
+</head>
+<body>
+  <!-- Back Button -->
+  <a href="project.html" class="back-button">Back</a>
+
+  <!-- BookFlix Project Details -->
+  <section class="project-details">
+    <h1>BookFlix</h1>
+    <p>A platform to explore and review books.</p>
+
+    <!-- Carousel -->
+    <div class="carousel">
+      <img src="img/pic1.png" alt="BookFlix Screenshot 1" class="active">
+      <img src="img/pic2.png" alt="BookFlix Screenshot 2">
+      <img src="img/pic3.png" alt="BookFlix Screenshot 3">
+      <img src="img/pic4.png" alt="BookFlix Screenshot 4">
+      <img src="img/pic5.png" alt="BookFlix Screenshot 5">
+      <img src="img/pic6.png" alt="BookFlix Screenshot 6">
+      <img src="img/pic7.png" alt="BookFlix Screenshot 7">
+
+    </div>
+
+    <p>
+      BookFlix is a web application designed for book enthusiasts to explore, review, and share their favorite books. 
+      It features a user-friendly interface, personalized recommendations, and a vibrant community of readers.
+    </p>
+  </section>
+
+  <script>
+    let currentIndex = 0;
+    const images = document.querySelectorAll('.carousel img');
+
+    function showNextImage() {
+      images[currentIndex].classList.remove('active');
+      currentIndex = (currentIndex + 1) % images.length;
+      images[currentIndex].classList.add('active');
+    }
+
+    // Automatically change the slide every 3 seconds
+    setInterval(showNextImage, 3000);
+  </script>
+</body>
+</html>

@@ -1,0 +1,450 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+  }
+  
+  /* Add a GIF background to the body */
+  body {
+    background: url('bg5.gif') no-repeat center center fixed;
+    background-size: cover; /* Ensures the GIF covers the entire screen */
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif; /* Optional: Set a default font */
+    color: #fff; /* Optional: Set text color for better contrast */
+    position: relative; /* Required for the overlay */
+  }
+
+  /* Add an overlay for blur and brightness control */
+  body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent black overlay for dimming */
+    backdrop-filter: blur(10px) brightness(0.8); /* Blur and brightness control */
+    -webkit-backdrop-filter: blur(10px) brightness(0.8); /* For Safari support */
+    z-index: -1; /* Ensures the overlay is behind all content */
+  }
+  
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  /* Navbar */
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.1); /* Glassmorphism effect */
+    color: #fff;
+    padding: 1rem;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    backdrop-filter: blur(10px); /* Blur effect */
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* Subtle border */
+  }
+  
+  nav .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  nav .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+  }
+  
+  nav .nav-links li a {
+    transition: color 0.3s ease;
+  }
+  
+  nav .nav-links li a:hover {
+    color: #f4a261;
+  }
+  
+  /* Hero Section */
+  .hero {
+    height: 90vh; /* Adjust height to reduce vertical space */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    margin-bottom: 0; /* Remove bottom margin */
+  }
+  
+  .hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+  
+  .hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .hero-content .btn {
+    background: rgba(255, 255, 255, 0.2); /* Glassmorphism button */
+    color: #fff;
+    padding: 0.75rem 1.5rem;
+    border-radius: 5px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    transition: background 0.3s ease;
+  }
+  
+  .hero-content .btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+  }
+  
+  /* About Section */
+  .about {
+    padding: 2rem;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.1); /* Glassmorphism effect */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    margin: 0 auto; /* Remove top margin */
+    max-width: 800px;
+    border-radius: 10px;
+  }
+  
+  .about h2 {
+    margin-bottom: 1rem;
+  }
+  
+  /* Projects Section */
+  .projects {
+    padding: 2rem;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.1); /* Glassmorphism effect */
+    border-radius: 10px;
+    margin: 2rem auto;
+    max-width: 1200px;
+  }
+  
+  .projects h2 {
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+    color: #fff;
+  }
+  
+  .project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+  }
+  
+  .project-card {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+  }
+  
+  .project-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .project-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+  }
+  
+  .project-card h3 {
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+    color: #fff;
+  }
+  
+  .project-card p {
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+    color: #ccc;
+  }
+  
+  .btn-glass {
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    width: auto;
+    display: inline-block;
+  }
+  
+  .btn-glass:hover {
+    background: rgba(255, 255, 255, 0.3);
+  }
+  
+  /* Contact Section */
+  .contact {
+    padding: 2rem;
+    text-align: center;
+    background: rgba(205, 174, 174, 0.1); /* Glassmorphism effect */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(154, 116, 116, 0.2);
+    margin: 2rem auto;
+    max-width: 600px;
+    border-radius: 10px;
+  }
+  
+  #contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  #contact-form input,
+  #contact-form textarea {
+    padding: 0.75rem;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 5px;
+    background: rgb(209, 206, 206);
+    color: #fff;
+  }
+  
+  #contact-form button {
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    padding: 0.75rem;
+    border: 1px solid rgb(255, 255, 255);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  #contact-form button:hover {
+    background: rgba(255, 255, 255, 0.3);
+  }
+  
+  /* Footer */
+  footer {
+    background: rgba(255, 255, 255, 0.1); /* Glassmorphism effect */
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+  }
+  /* Socials Section */
+.socials {
+    padding: 2rem;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.1); /* Glassmorphism effect */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    margin: 2rem auto;
+    max-width: 800px;
+    border-radius: 10px;
+  }
+  
+  .socials h2 {
+    margin-bottom: 1rem;
+  }
+  
+  .social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  
+  .social-link {
+    background: rgba(255, 255, 255, 0.2); /* Glassmorphism button */
+    color: #fff;
+    padding: 0.75rem 1.5rem;
+    border-radius: 5px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    transition: background 0.3s ease;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .social-link:hover {
+    background: rgba(255, 255, 255, 0.3);
+  }
+  
+  .social-link i {
+    font-size: 1.2rem;
+  }
+  /* Contact Form */
+#contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.1); /* Glassmorphism effect */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 2rem auto;
+  }
+  
+  #contact-form label {
+    font-size: 1rem;
+    color: #fff;
+  }
+  
+  #contact-form input,
+  #contact-form textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    transition: background 0.3s ease;
+  }
+  
+  #contact-form input:focus,
+  #contact-form textarea:focus {
+    background: rgba(255, 255, 255, 0.2);
+    outline: none;
+    border-color: rgba(255, 255, 255, 0.5);
+  }
+  
+  #contact-form button {
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    padding: 0.75rem;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  #contact-form button:hover {
+    background: rgba(255, 255, 255, 0.3);
+  }
+/* Body for Project Page */
+.project-body {
+  background: url('bg5.gif') no-repeat center center fixed;
+  background-size: cover;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;  
+}
+/* Back Button */
+.back-button {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background: rgba(0, 0, 0, 0);
+  backdrop-filter: blur(10px);
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 1rem;
+  z-index: 1000;
+  transition: background 0.3s ease;
+}
+
+.back-button:hover {
+  background: rgba(226, 36, 255, 0.478);
+}
+
+/* Slideshow Container */
+.slideshow-container {
+  position: relative; /* Corrected position */
+  max-width: 80%; /* Adjusted for better responsiveness */
+  height: 60%; /* Set a proportional height */
+  overflow: hidden;
+  border-radius: 15px; /* Slightly rounded corners */
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3); /* Enhanced shadow for a modern look */
+  margin: auto;
+  background: rgba(0, 0, 0, 0.3); /* Fallback background in case images fail to load */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* Slides */
+.slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.slide img {
+  width: 100%; /* Ensure the image covers the container */
+  height: 100%; /* Maintain the height of the container */
+  object-fit: cover; /* Crop the image to fit without distortion */
+  border-radius: 15px; /* Match the container's rounded corners */
+}
+
+/* Caption */
+.caption {
+  position: relative; /* Change from absolute to relative */
+  bottom: 10%; /* Remove absolute positioning */
+  left: 0;
+  transform: none; /* Remove transform */
+  background: rgba(0, 0, 0, 0.7); /* Semi-transparent background for readability */
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0 0 15px 15px; /* Rounded corners at the bottom */
+  font-size: 1rem;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  width: 100%; /* Ensure it spans the full width of the slide */
+}
+
+/* Navigation Arrows */
+.prev, .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2rem;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 0.5rem;
+  border-radius: 50%;
+  cursor: pointer;
+  user-select: none;
+  z-index: 1000;
+  transition: background 0.3s ease;
+}
+
+.prev {
+  left: 15px;
+}
+
+.next {
+  right: 15px;
+}
+
+.prev:hover, .next:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+
